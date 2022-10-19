@@ -1,0 +1,14 @@
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.seperatorCustom {
+    background-color: #d2d0ce;
+    border: #d2d0ce;
+    border-radius: 20px;
+    width: 10px;
+    height: 10px;
+}

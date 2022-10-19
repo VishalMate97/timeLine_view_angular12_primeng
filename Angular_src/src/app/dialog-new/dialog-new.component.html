@@ -1,0 +1,24 @@
+<p-timeline [value]="events">
+    <ng-template pTemplate="content" let-event>
+        <div class="mainContent">
+            <span style="font-size: small; font-weight: 700;">{{event.LASTCMT}}</span>
+            <span style="font-size: small; font-weight: 600;">On {{event.date}}</span>
+            <span style="font-size: smaller;">Modified by {{event.LASTUPDBY}}</span>
+            
+            <span><hr style="border: solid #dee2e6 1px;"></span>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="marker" let-event>
+        <span class="custom-marker p-shadow-2 seperatorCustom" >
+            <i ></i>
+        </span>
+    </ng-template>
+    <ng-template pTemplate="opposite" let-event>
+        <div class="mainContent">
+            <span style="font-size: large; font-weight: 100;">
+            {{event.status}}</span>
+            <!-- <span></span>-->
+            <span><hr style="border: solid #dee2e6 1px;"></span> 
+        </div>
+    </ng-template>
+</p-timeline>
