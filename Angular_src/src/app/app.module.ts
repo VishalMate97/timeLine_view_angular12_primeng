@@ -26,6 +26,7 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { TempserviceService } from './tempservice.service';
 import { DialogNewComponent } from './dialog-new/dialog-new.component';
 import {TimelineModule} from 'primeng/timeline';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -54,7 +55,7 @@ import {TimelineModule} from 'primeng/timeline';
     OverlayPanelModule,
     DynamicDialogModule
   ],
-  providers: [TempserviceService,DialogService],
+  providers: [TempserviceService,DialogService, DatePipe],
   bootstrap: [AppComponent],
   entryComponents:[DialogNewComponent]
 })

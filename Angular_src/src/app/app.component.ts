@@ -7,6 +7,7 @@ import { TempserviceService } from './tempservice.service';
 import { OverlayPanel } from 'primeng/overlaypanel';
 import { DialogService } from 'primeng/dynamicdialog';
 import { DialogNewComponent } from './dialog-new/dialog-new.component';
+import { DatePipe } from '@angular/common';
 // import * as cloneDeep from 'lodash';
 // import _ from 'lodash';
 // const cloneDeep = require('lodash/cloneDeep');
@@ -18,10 +19,17 @@ import { DialogNewComponent } from './dialog-new/dialog-new.component';
 export class AppComponent {
  
 
-  constructor(public dialogService: DialogService) {}
+  constructor(public dialogService: DialogService, public datepipe: DatePipe) {}
 
   ngOnInit() {
-   
+
+    var myString = "2022-10-18 17:31:00.797";
+    let newDate : Date = new Date(myString);
+    this.datepipe.transform(newDate, 'yyyy/MM/dd, h:mm a')
+
+    
+
+   console.log(this.datepipe.transform(newDate, 'yyyy/MM/dd, h:mm a'));
   }
   
   display: boolean = false;
@@ -29,7 +37,7 @@ export class AppComponent {
   showDialog() {
     const ref = this.dialogService.open(DialogNewComponent, {
       header: 'Notification TimeLine View',
-      width: '60%',
+      width: '45%',
       height: '80%'
   });
   }
