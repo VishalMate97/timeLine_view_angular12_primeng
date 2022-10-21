@@ -27,12 +27,14 @@ import { TempserviceService } from './tempservice.service';
 import { DialogNewComponent } from './dialog-new/dialog-new.component';
 import {TimelineModule} from 'primeng/timeline';
 import { DatePipe } from '@angular/common';
-
+import {AvatarModule} from 'primeng/avatar';
+import { actLabelAvatarPipe } from './actLabelAvatar';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DialogNewComponent
+    DialogNewComponent,
+    actLabelAvatarPipe
   ],
   imports: [
     TimelineModule,
@@ -53,7 +55,8 @@ import { DatePipe } from '@angular/common';
     ProgressBarModule,
     HttpClientModule,
     OverlayPanelModule,
-    DynamicDialogModule
+    DynamicDialogModule,
+    AvatarModule
   ],
   providers: [TempserviceService,DialogService, DatePipe],
   bootstrap: [AppComponent],

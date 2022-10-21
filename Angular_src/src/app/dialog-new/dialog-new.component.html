@@ -3,8 +3,8 @@
         <div class="mainContent">
             <ng-container *ngFor="let childData of data.children">
                 <span style="font-size: small; font-weight: 700;">{{childData.LASTCMT}}</span>
-                <span style="font-size: small; font-weight: 600;">On {{childData.date}}</span>
-                <span style="font-size: smaller;">Modified by {{childData.LASTUPDBY}}</span>
+                <span style="font-size: small; font-weight: 600;">{{childData.date}}</span>
+                <span style="font-size: smaller;">{{childData.LASTUPDBY}}</span>
                 <span>
                     <hr>
                 </span>
@@ -13,7 +13,11 @@
     </ng-template>
     <ng-template pTemplate="marker" let-data>
         <span class="custom-marker p-shadow-2 seperatorCustom">
-            <i></i>
+            <p-avatar
+            label="{{data.children[0].LASTUPDBY | actLabelAvatar }}"
+            size="small"
+            shape="circle"
+          ></p-avatar>
         </span>
     </ng-template>
     <ng-template pTemplate="opposite" let-data>
